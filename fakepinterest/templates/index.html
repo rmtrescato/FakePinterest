@@ -15,6 +15,8 @@
 
     <h2>Agora vamos continuar nosso site</h2>
 
+    {% block formulario %}
+
     <form method="POST">
     {{ form.csrf_token}}
 
@@ -24,9 +26,10 @@
       {{ form.senha.label() }}
       {{ form.senha() }}
 
-      {{ form.botao_confirmacao() }}
-      
+      {{ form.botao_confirmacao() }}    
 
+    </form>
+    {% endblock %}
 
   </body>
   {% endblock %}

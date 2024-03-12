@@ -13,9 +13,9 @@ class FormLogin(FlaskForm):
   
 class FormCriarConta(FlaskForm):
    email = StringField("E-mail", validators=[DataRequired(), Email()])
-   username = StringField("Nome de Usuario", validators=[Datarequired()])
-   senha = PasswordField("Senha", validators=[DataRequeired(), Length(6, 20)])
-   confirmacao_senha = PasswordField("Conformacao de Senha", validators=[DataRequired(), EqualTo("senha")])
+   username = StringField("Nome de Usuario", validators=[DataRequired()])
+   senha = PasswordField("Senha", validators=[DataRequired(), Length(6, 20)])
+   confirmacao_senha = PasswordField("Confirmacao de Senha", validators=[DataRequired(), EqualTo("senha")])
    botao_confirmacao = SubmitField("Criar Conta")
 
    def validate_email(self, email):
